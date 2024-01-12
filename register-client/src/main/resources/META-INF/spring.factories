@@ -1,0 +1,5 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  org.example.config.MyServiceRegistryAutoConfiguration,   \
+  org.example.config.MyLoadBalancerClientConfiguration, \
+  org.example.config.MyReactiveDiscoveryClientConfiguration,\
+  org.example.config.WebClientConfig

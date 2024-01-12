@@ -1,0 +1,8 @@
+server:
+  port: 8761
+  appChannelId: 111
+  dataChannelId: 111
+spring:
+  application:
+    name: register
+

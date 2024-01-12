@@ -1,0 +1,12 @@
+server:
+  port: 8072
+  appChannelId: fa4f0937-3889-4462-8fd7-d50857adc851
+  dataChannelId: fa4f0937-3889-4462-8fd7-d5083351
+spring:
+  cloud:
+    discovery:
+      name: localhost:8761
+  application:
+    name: server1
+
+
