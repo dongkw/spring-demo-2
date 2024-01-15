@@ -23,33 +23,22 @@ import org.example.cache.ApplicationsHolder;
 import org.example.core.MyRegisterProperties;
 import org.example.http.RegisterHttpProxy;
 //import org.example.loadbalancer.MyLoadBalancer;
-import org.example.loadbalancer.MyLoadBalancer;
 import org.example.register.MyAutoServiceRegistration;
 import org.example.register.MyRegistration;
 import org.example.register.MyServiceRegistry;
 import org.example.register.RegisterClient;
-import org.example.util.HttpUtil;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
-import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.ConditionalOnDiscoveryEnabled;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationAutoConfiguration;
 import org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationConfiguration;
 import org.springframework.cloud.client.serviceregistry.AutoServiceRegistrationProperties;
 
-import org.springframework.cloud.loadbalancer.core.ReactorLoadBalancer;
-import org.springframework.cloud.loadbalancer.core.ServiceInstanceListSupplier;
-import org.springframework.cloud.loadbalancer.support.LoadBalancerClientFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -112,10 +101,10 @@ public class MyServiceRegistryAutoConfiguration {
 	public RestTemplate getRestTemplate() {
 		return new RestTemplate();
 	}
-	@Bean
-	public HttpUtil httpUtil(){
-		return new HttpUtil();
-	}
+//	@Bean
+//	public HttpUtil httpUtil(){
+//		return new HttpUtil();
+//	}
 	@Bean
 //	@ConditionalOnBean(AutoServiceRegistrationProperties.class)
 	public MyAutoServiceRegistration myAutoServiceRegistration(

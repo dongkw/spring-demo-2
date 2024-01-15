@@ -72,6 +72,7 @@ public class DiscoveryClient implements RegisterService {
         instance.setClusterName(clusterName);
         instance.setServiceName(serviceName);
         instance.setAppChannelId(properties.getAppChannelId());
+        instance.setInstanceTimeout(properties.getInstanceTimeout());
 
         InstanceUtil.setInstanceIdIfEmpty(instance, "default");
         this.instance = instance;

@@ -62,7 +62,8 @@ public class MyRegisterProperties {
 
     @Value("${spring.cloud.discovery.registry-fetch-interval-seconds:30}")
     private long registryFetchIntervalSeconds;
-
+    @Value("${spring.cloud.discovery.instance-timeout:90}")
+    private long instanceTimeout;
     @Value("${server.appChannelId}")
     private String appChannelId;
     @Value("${server.dataChannelId}")

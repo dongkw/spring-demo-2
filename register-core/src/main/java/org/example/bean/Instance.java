@@ -1,5 +1,7 @@
 package org.example.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 import org.example.constants.Constants;
 import org.example.constants.PreservedMetadataKeys;
 import org.example.util.NamingUtils;
@@ -10,29 +12,37 @@ import java.util.Map;
 import java.util.Objects;
 
 
+@Data
 public class Instance implements Serializable {
 
     private static final long serialVersionUID = -742906310567291979L;
 
+
     /**
      * unique id of this instance.
      */
+    @ApiModelProperty("实例id")
     private String instanceId;
+    @ApiModelProperty("服务渠道id")
     private String appChannelId;
-
+    @ApiModelProperty("服务过期时间")
+    private Long instanceTimeout;
     /**
      * instance ip.
      */
+    @ApiModelProperty("服务ip")
     private String ip;
 
     /**
      * instance port.
      */
+    @ApiModelProperty("服务端口号")
     private int port;
 
     /**
      * instance weight.
      */
+    @ApiModelProperty("服务权重")
     private double weight = 1.0D;
 
     /**
@@ -60,84 +70,15 @@ public class Instance implements Serializable {
     /**
      * Service information of instance.
      */
+    @ApiModelProperty("服务名称")
     private String serviceName;
 
     /**
      * user extended attributes.
      */
+    @ApiModelProperty("元数据map")
     private Map<String, String> metadata = new HashMap<>();
 
-    public String getAppChannelId() {
-        return appChannelId;
-    }
-
-    public void setAppChannelId(String appChannelId) {
-        this.appChannelId = appChannelId;
-    }
-
-    public String getInstanceId() {
-        return this.instanceId;
-    }
-
-    public void setInstanceId(final String instanceId) {
-        this.instanceId = instanceId;
-    }
-
-    public String getIp() {
-        return this.ip;
-    }
-
-    public void setIp(final String ip) {
-        this.ip = ip;
-    }
-
-    public int getPort() {
-        return this.port;
-    }
-
-    public void setPort(final int port) {
-        this.port = port;
-    }
-
-    public double getWeight() {
-        return this.weight;
-    }
-
-    public void setWeight(final double weight) {
-        this.weight = weight;
-    }
-
-    public boolean isHealthy() {
-        return this.healthy;
-    }
-
-    public void setHealthy(final boolean healthy) {
-        this.healthy = healthy;
-    }
-
-    public String getClusterName() {
-        return this.clusterName;
-    }
-
-    public void setClusterName(final String clusterName) {
-        this.clusterName = clusterName;
-    }
-
-    public String getServiceName() {
-        return this.serviceName;
-    }
-
-    public void setServiceName(final String serviceName) {
-        this.serviceName = serviceName;
-    }
-
-    public Map<String, String> getMetadata() {
-        return this.metadata;
-    }
-
-    public void setMetadata(final Map<String, String> metadata) {
-        this.metadata = metadata;
-    }
 
     /**
      * add meta data.
@@ -152,21 +93,6 @@ public class Instance implements Serializable {
         metadata.put(key, value);
     }
 
-    public boolean isEnabled() {
-        return this.enabled;
-    }
-
-    public void setEnabled(final boolean enabled) {
-        this.enabled = enabled;
-    }
-
-    public boolean isEphemeral() {
-        return this.ephemeral;
-    }
-
-    public void setEphemeral(final boolean ephemeral) {
-        this.ephemeral = ephemeral;
-    }
 
     @Override
     public String toString() {

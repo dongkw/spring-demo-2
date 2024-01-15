@@ -1,5 +1,6 @@
 package org.example.bean;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +13,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Getter
 @Setter
 public class Applications implements Serializable {
+   @ApiModelProperty("服务实例map")
    Map<String,Application> applicationMap;
 
    public Applications() {
